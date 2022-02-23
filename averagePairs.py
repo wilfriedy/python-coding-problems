@@ -1,4 +1,4 @@
-#  Multiple Pointers - averagePair
+#   - averagePair
 #  Write a function called averagePair. Given a sorted array of integers and a target average, determine if there is a pair of values in the array where the average of the pair equals the target average. There may be more than one pair that matches the average target.
 
 #  Bonus Constraints:
@@ -15,19 +15,18 @@
 #  averagePair([],4)  false
 
 
-from doctest import FAIL_FAST
-
 
 def averagePair(arr , targ) :
-    arrLength = len(arr)
-    start = 0
+    arrLength = len(arr) #get the last element of the array
+    start = 0 #first element of the array
+    # this function returns the average value of two consecutive elements 
     def average(val1 , val2):
        return (val1 + val2) / 2
-    if (len(arr) < 1 ) : 
+    if (len(arr) < 1 ) : #if there is no element in the array then return false and stop the operation
         return False
-    for i in range(1, arrLength):
+    for i in range(1, arrLength): #loop through the a range as much as there is elements in the array and check the average 
         
-        print(average(arr[start] , arr[i]) )
+        # print(average(arr[start] , arr[i]) )
         if(average(arr[start] , arr[i]) == targ ):
             return True
         else:
